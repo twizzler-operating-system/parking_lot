@@ -1,5 +1,6 @@
-use cfg_if::cfg_if;
 use std::time::Instant;
+
+use cfg_if::cfg_if;
 
 /// Trait for the platform thread parker implementation.
 ///
@@ -62,6 +63,9 @@ cfg_if! {
         mod imp;
     } else if #[cfg(target_os = "redox")] {
         #[path = "redox.rs"]
+        mod imp;
+    } else if #[cfg(target_os = "twizzler")] {
+        #[path = "twizzler.rs"]
         mod imp;
     } else if #[cfg(all(target_env = "sgx", target_vendor = "fortanix"))] {
         #[path = "sgx.rs"]
