@@ -1,3 +1,4 @@
+#![allow(unexpected_cfgs)]
 use std::time::Instant;
 
 use cfg_if::cfg_if;

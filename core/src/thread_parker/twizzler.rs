@@ -6,8 +6,10 @@
 // copied, modified, or distributed except according to those terms.
 
 use core::sync::atomic::{AtomicU64, Ordering};
-use std::thread;
-use std::time::{Duration, Instant};
+use std::{
+    thread,
+    time::{Duration, Instant},
+};
 
 use twizzler_abi::syscall::{
     ThreadSync, ThreadSyncFlags, ThreadSyncOp, ThreadSyncReference, ThreadSyncSleep, ThreadSyncWake,
